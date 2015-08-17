@@ -1,10 +1,17 @@
+===========================
+CCHS Laser Cutter Modifications
+===========================
+ - LASER_FIRING_PIN is on at 5v.
+ - Configuration
+
+
 ==========================================
 Turnkey K40 Laser Arduino + Ramps Firmware
 ==========================================
 An example of this firmware in action : https://www.youtube.com/watch?v=6DKSxDIkqoA
 
 Based off Marlin for 3D printers, for more info see https://github.com/MarlinFirmware/Marlin
-Original credits for building this firmware from stock Marlin go to THinkscape and Lansing Makers Network and John for help with raster support. 
+Original credits for building this firmware from stock Marlin go to THinkscape and Lansing Makers Network and John for help with raster support.
 This firmware is based on their foundation work.
 
 This firmware is designed to be used in conjunction with my Inkscape 0.91 gcode exporter https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin
@@ -13,7 +20,7 @@ You can contact me via email at : 394ad2f@gmail.com, I check my email daily usua
 
 Donations
 ---------
-Find this software useful? Donations are gratefully appreciated. 
+Find this software useful? Donations are gratefully appreciated.
 
 * Paypal to 394ad2f@gmail.com
 * Bitcoins to 16TFmnFyvDA8Q6TTakvvhargy8c89Rb3cj
@@ -211,4 +218,3 @@ M Codes
 *  M351 - Toggle MS1 MS2 pins directly.
 *  M928 - Start SD logging (M928 filename.g) - ended by M29
 *  M999 - Restart after being stopped by error
-
