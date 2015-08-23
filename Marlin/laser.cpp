@@ -72,7 +72,7 @@ void laser_init()
   #endif
   #if LASER_CONTROL == 2
     if (LASER_INTENSITY_PIN == 2 || LASER_INTENSITY_PIN == 3 || LASER_INTENSITY_PIN == 5) timer3_init(LASER_INTENSITY_PIN);
-    if (LASER_INTENSITY_PIN == 6 || LASER_INTENSITY_PIN == 7 || LASER_INTENSITY_PIN == 8) timer4_init(LASER_INTENSITY_PIN);
+ //   if (LASER_INTENSITY_PIN == 6 || LASER_INTENSITY_PIN == 7 || LASER_INTENSITY_PIN == 8) timer4_init(LASER_INTENSITY_PIN);
   #endif
 
   #ifdef LASER_PERIPHERALS
@@ -120,7 +120,10 @@ void laser_fire(int intensity = 100.0){
 	  analogWrite(LASER_FIRING_PIN, labs((intensity / 100.0)*(F_CPU / LASER_PWM)));
     #endif
 	#if LASER_CONTROL == 2
-      analogWrite(LASER_INTENSITY_PIN, labs((intensity / 100.0)*(F_CPU / LASER_PWM)));
+
+      int power = 255 - labs((intensity / 100.0)*255);
+    //  SERIAL_ECHOLN(LASER_INTENSITY_PIN);
+      analogWrite(LASER_INTENSITY_PIN, power); //invert pwm signal
       digitalWrite(LASER_FIRING_PIN, HIGH);
     #endif
 
