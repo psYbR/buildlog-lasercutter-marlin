@@ -1,6 +1,23 @@
 ==========================================
+Laser Cutter V2 Marlin Firmware
+==========================================
+
+You're looking at the firmware used on the Connected Community Hackerspace's "Laser Cutter V2". This repository contains the most up to date configuration to suit that specific machine and can be flashed to it at any time to restore the firmware to the most recent version. Contributions are welcome - please ensure you preserve the machine specific configuration and also contact the Project Champions and / or CCHS Committee to advise them of what you are doing. Contact details are in the link below.
+
+The remainder of this readme is kept from the original forked repository - please ensure you refer to the appropriate documentation for the Laser Cutter V2 for all configuration, toolchain, usage and hardware information. That can be found here:
+
+http://www.hackmelbourne.org/wiki/doc:tools:laser_cutter2
+
+==================
+
+End of Laser Cutter V2 readme.
+
+==================
+
+==========================================
 Turnkey K40 Laser Arduino + Ramps Firmware
 ==========================================
+
 An example of this firmware in action : https://www.youtube.com/watch?v=6DKSxDIkqoA
 
 Based off Marlin for 3D printers, for more info see https://github.com/MarlinFirmware/Marlin
