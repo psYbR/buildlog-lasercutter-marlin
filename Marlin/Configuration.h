@@ -392,7 +392,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //#define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for r retracts
 
 // Lansing Makers Netowork Laser Cutter
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.5,78.5,6047.2440}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.82,78.82,6047.2440}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {7600, 7600, 10, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {2600,2600,2.5,2.5}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
@@ -449,7 +449,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 // The RepRapDiscount Smart Controller (white PCB)
 // http://reprap.org/wiki/RepRapDiscount_Smart_Controller
-#define REPRAP_DISCOUNT_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_SMART_CONTROLLER
 
 // The GADGETS3D G3D LCD/SD Controller (blue PCB)
 // http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel
@@ -459,7 +459,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 // ==> REMEMBER TO INSTALL U8glib to your ARDUINO library folder: http://code.google.com/p/u8glib/wiki/u8glib
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 // The RepRapWorld REPRAPWORLD_KEYPAD v1.1
 // http://reprapworld.com/?products_details&products_id=202&cPath=1591_1626
