@@ -83,7 +83,7 @@ void laser_init()
   pinMode(LASER_PERIPHERALS_STATUS_PIN, INPUT);
   #endif // LASER_PERIPHERALS
   
-  digitalWrite(LASER_FIRING_PIN, HIGH);  // Laser FIRING is active LOW, so preset the pin
+  digitalWrite(LASER_FIRING_PIN, LASER_UNARM);  // Laser FIRING is active LOW, so preset the pin
   pinMode(LASER_FIRING_PIN, OUTPUT);
 
   // initialize state to some sane defaults
@@ -121,7 +121,7 @@ void laser_fire(int intensity = 100.0){
     #endif
 	#if LASER_CONTROL == 2
       analogWrite(LASER_INTENSITY_PIN, labs((intensity / 100.0)*(F_CPU / LASER_PWM)));
-      digitalWrite(LASER_FIRING_PIN, LOW);
+      digitalWrite(LASER_FIRING_PIN, LASER_ARM);
     #endif
 
     if (laser.diagnostics) {
@@ -133,7 +133,7 @@ void laser_extinguish(){
 	  laser.firing = LASER_OFF;
 
 	  // Engage the pullup resistor for TTL laser controllers which don't turn off entirely without it.
-	  digitalWrite(LASER_FIRING_PIN, HIGH);
+	  digitalWrite(LASER_FIRING_PIN, LASER_UNARM);
 	  laser.time += millis() - (laser.last_firing / 1000);
 
 	  if (laser.diagnostics) {
