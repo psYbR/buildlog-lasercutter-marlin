@@ -873,6 +873,9 @@ void process_commands()
     switch((int)code_value())
     {
     case 0: // G0
+      #ifdef DEFAULT_G0_JOG
+        feedrate = DEFAULT_G0_JOG;
+      #endif
       if(Stopped == false) {
         get_coordinates(); // For X Y Z E F
         prepare_move();

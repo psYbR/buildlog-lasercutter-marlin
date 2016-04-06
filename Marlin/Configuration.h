@@ -78,6 +78,8 @@
 //
 #define LASER
 
+#define DEFAULT_G0_JOG 4000 //mm/s for G0 (non laser) moves
+
 //// The following define selects how to control the laser.  Please choose the one that matches your setup.
 // 1 = Single pin control - LOW when off, HIGH when on, PWM to adjust intensity
 // 2 = Two pin control - A firing pin for which LOW = off, HIGH = on, and a seperate intensity pin which carries a constant PWM signal and adjusts duty cycle to control intensity
@@ -359,9 +361,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //#define Z_MIN_POS 0
 
 //China Town K40 CO2 Laser Engraver/Cutter
-#define X_MAX_POS 337
+#define X_MAX_POS 367 //not quite the end of the build area but the end effector fouls beyond this
 #define X_MIN_POS 0
-#define Y_MAX_POS 230
+#define Y_MAX_POS 320
 #define Y_MIN_POS 0
 #define Z_MAX_POS 75
 #define Z_MIN_POS 0
@@ -377,7 +379,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //Manual homing switch locations:
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
-#define MANUAL_Y_HOME_POS 0
+#define MANUAL_Y_HOME_POS -9
 #define MANUAL_Z_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 402 // For delta: Distance between nozzle and print surface after homing.
 
