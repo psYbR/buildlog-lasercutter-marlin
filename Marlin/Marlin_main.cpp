@@ -870,7 +870,8 @@ void process_commands()
 
   if(code_seen('G'))
   {
-    switch((int)code_value())
+  int feedrate_prevlaser = feedrate;
+  switch((int)code_value())
     {
     case 0: // G0
       #ifdef DEFAULT_G0_JOG
@@ -880,6 +881,9 @@ void process_commands()
         get_coordinates(); // For X Y Z E F
         prepare_move();
         //ClearToSend();
+        #ifdef DEFAULT_G0_JOG
+          feedrate = feedrate_prevlaser;
+        #endif
         return;
       }
       //break;
@@ -1072,6 +1076,9 @@ void process_commands()
 	#endif // G5_BEZIER
     #ifdef LASER_RASTER
     case 7: //G7 Execute raster line
+    #ifdef DEFAULT_G0_JOG
+        feedrate = DEFAULT_G0_JOG;
+      #endif
       if (code_seen('L')) laser.raster_raw_length = int(code_value());
 	  if (code_seen('$')) {
 		laser.raster_direction = (bool)code_value();
@@ -1099,7 +1106,9 @@ void process_commands()
 	  laser.status = LASER_ON;
 	  laser.fired = RASTER;
 	  prepare_move();
-
+#ifdef DEFAULT_G0_JOG
+        feedrate = feedrate_prevlaser;
+      #endif
       break;
 	#endif // LASER_RASTER
 
